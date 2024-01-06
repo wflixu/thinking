@@ -41,8 +41,7 @@
       "resources": [],
       "shortDescription": "",
       "targets": [
-        "dmg",
-        "updater"
+        "dmg"
       ],
       "windows": {
         "certificateThumbprint": null,
