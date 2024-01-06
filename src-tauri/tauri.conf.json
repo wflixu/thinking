@@ -1,14 +1,14 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "npm run build",
-    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "pnpm run build",
+    "beforeDevCommand": "pnpm run dev",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },
   "package": {
-    "productName": "thinking",
-    "version": "0.1.0"
+    "productName": "Thinking",
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
@@ -40,7 +40,10 @@
       },
       "resources": [],
       "shortDescription": "",
-      "targets": "all",
+      "targets": [
+        "dmg",
+        "updater"
+      ],
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
@@ -51,14 +54,19 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://api.wflixu.cn/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDRDMzA1OUIxNjA5REU2QTEKUldTaDVwMWdzVmt3VEgwanpBcWFIU2VXcW5uNXFnTk9xVlkrK1lvT0lrZm5NeU5oUnkvUmtERTgK"
     },
     "windows": [
       {
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "thinking",
+        "title": "Thinking",
         "width": 800
       }
     ]
