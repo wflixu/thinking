@@ -39,7 +39,7 @@ fn start_capture() -> Vec<String> {
 
     for monitor in monitors {
         let image = monitor.capture_image().unwrap();
-        path::app_cache_dir(config)
+    
     }
 
     println!("运行耗时: {:?}", start.elapsed());

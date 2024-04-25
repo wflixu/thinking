@@ -8,6 +8,9 @@ dependencies:
   '@tauri-apps/api':
     specifier: ^1.5.3
     version: 1.5.3
+  globalShortcut:
+    specifier: link:@tauri-apps/api/globalShortcut
+    version: link:@tauri-apps/api/globalShortcut
   pinia:
     specifier: ^2.0.21
     version: 2.0.21(typescript@4.7.4)(vue@3.2.38)
