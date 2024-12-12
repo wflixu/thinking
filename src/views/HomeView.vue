@@ -2,9 +2,10 @@
 import { computed, onMounted, ref } from 'vue';
 import pkg from './../../package.json'
 import { invoke } from '@tauri-apps/api';
-import { register } from '@tauri-apps/api/globalShortcut';
-import { appWindow } from '@tauri-apps/api/window';
+import { register } from '@tauri-apps/plugin-global-shortcut';
+import { getCurrentWebviewWindow } from '@tauri-apps/api/webviewWindow';
 import { emit, listen } from '@tauri-apps/api/event';
+const appWindow = getCurrentWebviewWindow()
 
 const version = computed(() => {
   return pkg.version
