@@ -1,77 +1,72 @@
 {
-  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeBuildCommand": "pnpm run build",
     "beforeDevCommand": "pnpm run dev",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420"
   },
-  "package": {
-    "productName": "Thinking",
-    "version": "0.1.1"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": true,
-      "globalShortcut": {
-        "all": true 
-      }
+  "bundle": {
+    "active": true,
+    "createUpdaterArtifacts": true,
+    "category": "DeveloperTool",
+    "copyright": "",
+    "targets": [
+      "app"
+    ],
+    "externalBin": [],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": ""
     },
-    "bundle": {
-      "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
+    "longDescription": "",
+    "macOS": {
+      "entitlements": null,
+      "exceptionDomain": "",
+      "frameworks": [],
+      "providerShortName": null,
+      "signingIdentity": null
+    },
+    "resources": [],
+    "shortDescription": "",
+    "linux": {
       "deb": {
         "depends": []
-      },
-      "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "cn.qdazi.thinking",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": [
-        "dmg",
-        "updater"
-      ],
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
       }
-    },
-    "security": {
-      "csp": null
-    },
+    }
+  },
+  "productName": "Thinking",
+  "mainBinaryName": "Thinking",
+  "version": "0.2.0",
+  "identifier": "cn.qdazi.thinking",
+  "plugins": {
     "updater": {
-      "active": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVBMTM5QzdEMUExMTY3RUUKUldUdVp4RWFmWndUNmlhUHZvcFJNTHFiYmpLUldLSmJyZ2EvNEI4YkJ1bmJMT1BEeUl1NnhmQzIK",
       "endpoints": [
-        "https://github.com/wflixu/thinking/releases/download/v0.1.2/latest.json"
-      ],
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDRDMzA1OUIxNjA5REU2QTEKUldTaDVwMWdzVmt3VEgwanpBcWFIU2VXcW5uNXFnTk9xVlkrK1lvT0lrZm5NeU5oUnkvUmtERTgK"
-    },
+        "https://github.com/wflixu/thinking/releases/latest/download/latest.json"
+      ]
+    }
+  },
+  "app": {
     "windows": [
       {
         "fullscreen": false,
         "height": 600,
         "resizable": true,
         "title": "Thinking",
-        "width": 800
+        "width": 800,
+        "useHttpsScheme": true
       }
-    ]
+    ],
+    "security": {
+      "csp": null
+    }
   }
 }
